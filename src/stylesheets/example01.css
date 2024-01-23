@@ -1,1 +1,151 @@
 /* TODO: Example 01 (Activity 2) CSS goes here */
+
+html{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+/* using the * and {} means the values will inherit from the border-box */
+*, ::before, ::after{
+    box-sizing: inherit;
+}
+
+header{
+    font-size: 2rem;
+    color:white;
+    padding: 0 1rem;
+    height: 100px;
+    line-height: 100px;
+    background-color: #6f2a45;
+   
+}
+
+footer{
+    font-size: 1.5rem;
+    color:white;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+    background-color: #6f2a45;
+}
+
+#main-container{
+    display: table;
+    height: calc(100vh - 160px);
+    width: 100vw;
+}
+
+body{
+    margin:0;
+}
+
+/* how our page will look on smaller screen size  */
+#aside-col{
+    display:none;
+}
+
+
+#main-col{
+    display: table-cell;
+    background-color: #cff0f2;
+}
+
+#main-container .box{
+    height: 100px;
+    line-height: 100px;
+    background-color: #086c82;
+    text-align: center;
+    color:white;
+    margin: 2rem 1rem 0 1rem;
+}
+
+/* for all the screens */
+/* tablet */
+@media all and (min-width: 600px){
+    #main-col .box{
+        float: left;
+        margin: 1rem 0 0 1rem;
+        width: calc((100% - 3rem) / 2);
+       
+    }
+}
+
+@media all and (min-width: 800px){
+    #main-col{
+        width: 70%;
+    }
+
+    #main-container .box{
+        float: left;
+        margin: 1rem 0 0 1rem;
+        width: calc((100% - 5rem) / 3);
+    }
+
+    #aside-col{
+        display: table-cell;
+        background-color: lightgray;
+    }
+
+    #aside-col .box{
+        width: calc((100% - 3rem) / 2);
+        vertical-align: top;
+    }
+
+    .clearfix::after{
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    #main-container [selected] {
+        color: black;
+        background-color: lightskyblue;
+    }
+
+    #main-container [featured] {
+        color: black;
+        background-color: lightsteelblue;
+        border: 5px solid black;
+    }
+
+    /* Styling links */
+
+    ul.links{
+        list-style: none;
+        padding: 1rem;
+    }
+
+    ul.links li{
+        color: black;
+        padding: .5rem;
+        background-color: lightslategray;
+        margin-bottom: .3rem;
+        text-align: center;
+    }
+
+    ul.links > li > a{
+        color: inherit;
+        text-decoration: none;
+    }
+
+    ul.links > li > a:link{
+        color: rgb(15, 7, 152);
+    }
+
+    ul.links > li > a:visited{
+        color: #653c43;
+    }
+
+    ul.links > li > a:active{
+        border-bottom: 3px solid rgb(33, 26, 26);
+    }
+
+    ul.links > li > a:link{
+        background-color: rgb(250, 249, 252);
+    }
+    ul.links > li > a:hover{
+        color: rgb(91, 225, 61);
+    }
+
+}
