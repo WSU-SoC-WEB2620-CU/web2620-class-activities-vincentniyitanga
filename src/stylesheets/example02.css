@@ -1,1 +1,174 @@
 /* TODO: Example 02 (Activity 3) CSS goes here */
+
+html{
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    background: white;
+
+}
+
+*, ::before, ::after{
+    box-sizing: inherit;
+}
+
+nav{
+    padding: .5rem;
+   border-bottom: 1px solid green;
+}
+
+nav > ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav > ul > li{
+    margin: 0;
+    display: inline-block;
+    margin-right: .5rem;
+}
+
+.pull-left{
+    float: left;
+}
+
+.pull-right{
+    float: right;
+}
+
+/* keeps the ul in clearfix in order while in the nav border */
+.clearfix::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+/* Link styling */
+
+nav a:link, nav a:visited, nav a:active{
+    text-decoration: none;
+    color: red;
+}
+
+nav a:hover{
+    text-decoration: none;
+    color:green;
+}
+
+
+footer{
+    margin: 2rem .5rem;
+    padding: .5rem;
+    border-top: 1px solid black;
+
+}
+
+img{
+    max-width: 300px;
+    width: 50% ;
+    border: 3px solid black;
+    border-radius: 10px;
+    margin: .75rem;
+    box-shadow: 5px 10px inset;
+}
+
+.container{
+    margin: 0 auto;
+    width: 90%;
+    background-color: lightgray;
+    counter-reset: article;       /* set a counter named article and it's initial value to 0 */
+}
+
+/* Styling Articles */
+article > h1::before{
+    counter-increment: article;    /* increase the value of article by 1 */
+    content: "Article" counter(article) ": ";                          /* display the word "Article", the value of article container, 
+    and a colon before the content of each h1 */
+    color: lightseagreen;
+}
+
+/* Styling Circles*/
+
+.circle{
+    float: left;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    margin: .5rem;
+    background-color: lightsteelblue;
+    color: black;
+    font-size: 2rem;
+    text-align: center;
+    
+}
+
+.vcenter{
+    line-height: 200px; 
+}
+
+.vcenter2{
+    line-height: 200px;
+    margin: 0 calc((100% - 800px)/8);
+}
+
+
+.vcenter2 > .circle::after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+/*
+.vcenter3 > .circle{
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+    margin-left: .75rem;
+}
+*/
+
+/* Equal-Height Columns */
+
+.column{
+    float: left;
+    padding: 10px;
+    color: black;
+    font-style: oblique;
+}
+
+.left-col{
+    background-color: blue;
+    width: 25%;
+    padding: 10px;
+}
+
+.middle-col{
+    background-color: yellow;
+    color: black;
+    width: 50%;
+    padding: 10px;
+}
+
+.right-col{
+    background-color: green;
+    width: 25%;
+    padding: 10px;
+    
+}
+
+.equal-height .column{
+    float: none;
+    display: table-cell;
+}
+
+/* Article 5 */
+.middle-split .colonne{
+    display: table-cell;
+    float: none;
+    padding: 10px;
+}
+
+
